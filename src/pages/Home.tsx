@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         {/* HERO / PRESENTACIÓN */}
         <section className="hero" data-aos="fade-up">
           <IonAvatar className="hero-avatar" data-aos="zoom-in">
-            <img src="avatar.png" alt="Foto de perfil" />
+            <img src="/home/avatar.png" alt="Foto de perfil" />
           </IonAvatar>
           <h1 data-aos="fade-up" data-aos-delay="200">Lucas Nahuel Mieres</h1>
           <p className="tagline" data-aos="fade-up" data-aos-delay="400">
