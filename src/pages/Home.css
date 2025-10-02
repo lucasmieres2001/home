@@ -1,0 +1,91 @@
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #3f51b5, #1a237e);
+  color: white;
+}
+
+.hero-avatar {
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  border: 4px solid white;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin: 10px 0 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: #00c853;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #009624;
+}
+
+.secondary-btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  background: #eeeeee;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* EXPERIENCE / PROJECTS */
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.experience-item h3 {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.experience-item a {
+  color: #3f51b5;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* NAVBAR BRAND */
+.brand {
+  font-weight: bold;
+  color: #3f51b5;
+}
