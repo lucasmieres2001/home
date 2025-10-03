@@ -1,91 +1,165 @@
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #3f51b5, #1a237e);
-  color: white;
+.content-modern {
+  --background: #000000;
 }
 
-.hero-avatar {
-  margin: auto;
-  width: 120px;
-  height: 120px;
-  border: 4px solid white;
-  border-radius: 50%;
-  margin-bottom: 20px;
+.toolbar-modern {
+  background: #ffffffcc; /* blanco translúcido */
+  backdrop-filter: blur(10px);
 }
 
-.tagline {
-  font-size: 1.2em;
-  margin: 10px 0 30px;
+.brand-modern {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 
-.cta-buttons {
+.hero-modern {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  min-height: 95vh;
+  text-align: center;
+  background: linear-gradient(135deg, #2d328a, #b3b7ff);
+  color: #ffffff;
+  padding: 2rem;
 }
 
-.primary-btn, .secondary-btn {
-  padding: 12px 24px;
+.hero-avatar-modern {
+  width: 200px;  /* más grande */
+  height: 200px;
+  border-radius: 50%;  /* círculo perfecto */
+  overflow: hidden;    /* asegura que el img no se desborde */
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  margin-bottom: 1rem; /* empuja la foto hacia arriba del texto */
+}
+
+.hero-avatar-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta y centra sin deformar */
+  transition: transform 0.3s ease;
+}
+
+.hero-avatar-modern:hover img {
+  transform: scale(1.05);
+}
+
+
+.hero-title-modern {
+  font-size: 2.8rem;
+  margin-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tagline-modern {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: rgba(255,255,255,0.85);
+}
+
+.cta-buttons-modern {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-btn-modern, .secondary-btn-modern {
+  padding: 0.9rem 1.8rem;
   border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  display: inline-block;
 }
 
-.primary-btn {
-  background: #00c853;
+.primary-btn-modern {
+  background: #25D366;
   color: white;
 }
 
-.primary-btn:hover {
-  background: #009624;
+.primary-btn-modern:hover {
+  background: #20b857;
 }
 
-.secondary-btn {
+.secondary-btn-modern {
+  background: #020202;
   border: 2px solid white;
   color: white;
 }
 
-.secondary-btn:hover {
-  background: rgba(255,255,255,0.2);
+.secondary-btn-modern:hover {
+  background: white;
+  color: #4e54c8;
 }
 
-/* SKILLS */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.section-modern {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.skill-badge {
-  background: #eeeeee;
-  padding: 8px 15px;
+.services-grid-modern,
+.projects-grid-modern,
+.skills-grid-modern {
+  display: grid;
+  gap: 2rem;
+}
+
+.services-grid-modern {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.projects-grid-modern {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.skills-grid-modern {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  justify-items: center;
+}
+
+.service-card-modern,
+.project-card-modern {
+  background: linear-gradient(135deg, #692a8d, #9b5cff);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-modern:hover,
+.project-card-modern:hover {
+  
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.skill-badge-modern {
+  padding: 0.6rem 1.2rem;
   border-radius: 20px;
-  font-size: 0.9em;
-  font-weight: 500;
+  background: linear-gradient(135deg, #692a8d, #9b5cff);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
 }
 
-/* EXPERIENCE / PROJECTS */
-.experience-item {
-  margin-bottom: 20px;
+.skill-badge-modern:hover {
+  transform: scale(1.1);
 }
 
-.experience-item h3 {
-  margin: 5px 0;
-  font-weight: bold;
+.contact-modern {
+  background: #020202;
 }
 
-.experience-item a {
-  color: #3f51b5;
-  font-weight: 500;
-  text-decoration: underline;
+.contact-list-modern IonItem {
+  --background: transparent;
 }
 
-/* NAVBAR BRAND */
-.brand {
-  font-weight: bold;
-  color: #3f51b5;
+.contact-modern IonList {
+  background: #020202;
+  max-width: 400px;
+  margin: 0 auto;
 }

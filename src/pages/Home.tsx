@@ -1,176 +1,211 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import { motion } from 'framer-motion';
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonToolbar,
   IonTitle,
+  IonAvatar,
+  IonButtons,
+  IonButton,
   IonCard,
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
+  IonList,
   IonItem,
   IonIcon,
   IonLabel,
-  IonAvatar,
-  IonList,
-  IonText,
-  IonButtons,
-  IonButton
+  IonText
 } from '@ionic/react';
 import { mail, call, location, logoGithub, logoLinkedin } from 'ionicons/icons';
 import './Home.css';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeInOut" }
+  }
+};
+
 const Home: React.FC = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      startEvent: 'DOMContentLoaded' // 🔥 Se activa al cargar la página
-    });
-  }, []);
 
   return (
     <IonPage>
-      {/* NAVBAR */}
       <IonHeader translucent>
-        <IonToolbar color="light" data-aos="fade-down">
-          <IonTitle className="brand">Lucas Mieres</IonTitle>
+        <IonToolbar className="toolbar-modern">
+          <IonTitle className="brand-modern">Lucas Mieres</IonTitle>
           <IonButtons slot="end">
-            <IonButton href="#services" data-aos="fade-down" data-aos-delay="200">Servicios</IonButton>
-            <IonButton href="#projects" data-aos="fade-down" data-aos-delay="400">Proyectos</IonButton>
-            <IonButton href="#contact" data-aos="fade-down" data-aos-delay="600">Contacto</IonButton>
+            <IonButton href="#services">Servicios</IonButton>
+            <IonButton href="#projects">Proyectos</IonButton>
+            <IonButton href="#contact">Contacto</IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        
-        {/* HERO / PRESENTACIÓN */}
-        <section className="hero" data-aos="fade-up">
-          <IonAvatar className="hero-avatar" data-aos="zoom-in">
+      <IonContent fullscreen className="content-modern">
+        {/* HERO */}
+        <section className="hero-modern">
+          <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{fadeInUp}}
+          transition={{ delay: 0 }}
+        >
+          <div className="hero-avatar-modern">
             <img src="/home/avatar.png" alt="Foto de perfil" />
-          </IonAvatar>
-          <h1 data-aos="fade-up" data-aos-delay="200">Lucas Nahuel Mieres</h1>
-          <p className="tagline" data-aos="fade-up" data-aos-delay="400">
-            💻 Desarrollador Fullstack • Automatizaciones de tareas y Soluciones Web 
-          </p>
-          <div className="cta-buttons" data-aos="fade-up" data-aos-delay="600">
-            <a 
-              className="primary-btn"
+          </div>
+        </motion.div>
+
+          <motion.h1
+            className="hero-title-modern"
+            initial="hidden"
+            animate="visible"
+            variants={{fadeInUp}}
+            transition={{ delay: 0.2 }}
+          >
+            Lucas Nahuel Mieres
+          </motion.h1>
+          <motion.p
+            className="tagline-modern"
+            initial="hidden"
+            animate="visible"
+            variants={{fadeInUp}}
+            transition={{ delay: 0.4 }}
+          >
+            💻 Desarrollo Fullstack • Automatización • Soluciones Web
+          </motion.p>
+          <motion.div
+            className="cta-buttons-modern"
+            initial="hidden"
+            animate="visible"
+            variants={{fadeInUp}}
+            transition={{ delay: 0.6 }}
+          >
+            <a
+              className="primary-btn-modern"
               href="https://wa.me/543454126943?text=Hola%20Lucas!%20Quiero%20saber%20más%20sobre%20tus%20servicios"
               target="_blank"
-            >
-              Hablemos por WhatsApp
-            </a>
-            <a className="secondary-btn" href="#projects">Ver Proyectos</a>
-          </div>
+              rel="noreferrer"
+            >Hablemos por WhatsApp</a>
+          </motion.div>
         </section>
 
-        {/* EXPERIENCIA Y CV */}
-        <IonCard id="services" data-aos="fade-right" data-aos-delay="200">
-          <IonCardHeader>
-            <IonCardTitle>💼 Experiencia & Servicios</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <p>Ofrezco desarrollo de aplicaciones web, integraciones con APIs, automatización de procesos y consultoría tecnológica para pymes, emprendedores y particulares.</p>
-            <div className="experience-item" data-aos="fade-up" data-aos-delay="400">
-              <h3>Agencia "TDH" • 05/25 - 09/25 (Frontend) [Freelance]</h3>
-              <IonText color="medium">
-                <p>E-Commerce "SOJA" • 12/23 - 02/24 (Fullstack con pasarela de pagos) [Freelance]</p>
-              </IonText>
+        {/* SERVICES */}
+        <section id="services" className="section-modern services-modern">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{fadeInUp}}
+            transition={{ delay: 0.2 }}
+          >
+            <h2>Experiencia & Servicios</h2>
+          </motion.div>
+          <motion.div
+            className="services-grid-modern"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{fadeInUp}}
+            transition={{ delay: 0.4 }}
+          >
+            {/* Agrega aquí tus servicios */}
+            <div className="service-card-modern">
+              <h3>Desarrollo Web</h3>
+              <p>Aplicaciones modernas, rápidas y seguras.</p>
             </div>
-          </IonCardContent>
-        </IonCard>
+            <div className="service-card-modern">
+              <h3>Automatización</h3>
+              <p>Optimización de procesos y tareas repetitivas.</p>
+            </div>
+            <div className="service-card-modern">
+              <h3>Consultoría</h3>
+              <p>Asesoramiento en tecnología y desarrollo.</p>
+            </div>
+          </motion.div>
+        </section>
 
-        {/* PORTFOLIO */}
-        <IonCard id="projects" data-aos="fade-left" data-aos-delay="200">
-          <IonCardHeader>
-            <IonCardTitle>🚀 Proyectos Destacados</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <div className="experience-item" data-aos="zoom-in" data-aos-delay="200">
+        {/* PROJECTS */}
+        <section id="projects" className="section-modern projects-modern">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{fadeInUp}}
+            transition={{ delay: 0.2 }}
+          >
+            <h2>Proyectos Destacados</h2>
+          </motion.div>
+          <motion.div
+            className="projects-grid-modern"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{fadeInUp}}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="project-card-modern">
               <h3>Comparador de precios</h3>
-              <IonText color="medium">
-                <p>Servicio con +15 mercados argentinos, ayudando al ahorro del usuario.</p>
-                <a href="https://github.com/lucasmieres2001/mejoresprecios" target="_blank">Ver proyecto</a>
-              </IonText>
+              <p>Servicio con +15 mercados argentinos, ayudando al ahorro del usuario.</p>
+              <a href="https://github.com/lucasmieres2001/mejoresprecios" target="_blank" rel="noreferrer">Ver proyecto</a>
             </div>
-            <div className="experience-item" data-aos="zoom-in" data-aos-delay="400">
-              <h3>Asistente para estudiantes</h3>
-              <IonText color="medium">
-                <p>Gestión de tareas, apuntes y prioridades académicas.</p>
-                <a href="https://github.com/lucasmieres2001/Ukeek---Junia" target="_blank">Ver proyecto</a>
-              </IonText>
+            <div className="project-card-modern">
+              <h3>Gestor de tareas</h3>
+              <p>Organiza tus tareas y proyectos de manera eficiente.</p>
+              <a href="#" target="_blank" rel="noreferrer">Ver proyecto</a>
             </div>
-            <div className="experience-item" data-aos="zoom-in" data-aos-delay="600">
-              <h3>Portafolio personal</h3>
-              <IonText color="medium">
-                <p>Hecho en React + TypeScript.</p>
-                <a href="https://github.com/lucasmieres2001/my-cv" target="_blank">Ver proyecto</a>
-              </IonText>
-            </div>
-          </IonCardContent>
-        </IonCard>
+            {/* Agrega más proyectos aquí */}
+          </motion.div>
+        </section>
 
         {/* SKILLS */}
-        <IonCard data-aos="fade-up" data-aos-delay="200">
-          <IonCardHeader>
-            <IonCardTitle>🛠️ Habilidades Técnicas</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <div className="skills-grid">
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="100">React</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="200">TypeScript</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="300">Ionic</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="400">Java/Spring</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="500">Node.js/Express</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="600">MySQL</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="700">MongoDB</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="800">Git</span>
-              <span className="skill-badge" data-aos="zoom-in" data-aos-delay="900">Postman</span>
-            </div>
-          </IonCardContent>
-        </IonCard>
+        <section className="section-modern skills-modern">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{fadeInUp}} custom={0.2}>
+            <h2>Habilidades Técnicas</h2>
+          </motion.div>
+          <motion.div className="skills-grid-modern" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{fadeInUp}} custom={0.4}>
+            {["React", "TypeScript", "Ionic", "Java / Spring", "Node.js", "MySQL", "MongoDB", "Git", "Postman"].map((skill, idx) => (
+              <span key={skill} className="skill-badge-modern" style={{ transitionDelay: `${idx * 100}ms` }}>
+                {skill}
+              </span>
+            ))}
+          </motion.div>
+        </section>
 
         {/* CONTACTO */}
-        <IonCard id="contact" data-aos="fade-up" data-aos-delay="200">
-          <IonCardHeader>
-            <IonCardTitle>📩 Contacto</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
+        <section id="contact" className="section-modern contact-modern">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{fadeInUp}} custom={0.2}>
+            <h2>Contacto</h2>
+          </motion.div>
+          <motion.div className="contact-list-modern" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{fadeInUp}} custom={0.4}>
             <IonList lines="none">
-              <IonItem data-aos="fade-right" data-aos-delay="100">
+              <IonItem>
                 <IonIcon icon={mail} slot="start" />
                 <IonLabel>lucassmieres2001@gmail.com</IonLabel>
               </IonItem>
-              <IonItem
-                href="https://wa.me/543454126943?text=Hola%20Lucas!%20Quiero%20contratar%20tus%20servicios"
-                target="_blank"
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
+              <IonItem button href="https://wa.me/543454126943?text=Hola%20Lucas!%20Quiero%20contratar%20tus%20servicios" target="_blank" rel="noreferrer">
                 <IonIcon icon={call} slot="start" />
                 <IonLabel>+54 3454 126943 (WhatsApp)</IonLabel>
               </IonItem>
-              <IonItem data-aos="fade-right" data-aos-delay="300">
+              <IonItem>
                 <IonIcon icon={location} slot="start" />
                 <IonLabel>Entre Ríos, Argentina</IonLabel>
               </IonItem>
-              <IonItem href="https://github.com/lucasmieres2001" target="_blank" data-aos="fade-right" data-aos-delay="400">
+              <IonItem href="https://github.com/lucasmieres2001" target="_blank" rel="noreferrer">
                 <IonIcon icon={logoGithub} slot="start" />
                 <IonLabel>GitHub</IonLabel>
               </IonItem>
-              <IonItem href="https://www.linkedin.com/in/lucas-mieres-86198528b" target="_blank" data-aos="fade-right" data-aos-delay="500">
+              <IonItem href="https://www.linkedin.com/in/lucas-mieres-86198528b" target="_blank" rel="noreferrer">
                 <IonIcon icon={logoLinkedin} slot="start" />
                 <IonLabel>LinkedIn</IonLabel>
               </IonItem>
             </IonList>
-          </IonCardContent>
-        </IonCard>
+          </motion.div>
+        </section>
 
       </IonContent>
     </IonPage>
