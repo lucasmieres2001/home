@@ -156,7 +156,7 @@ const Home: React.FC = () => {
             <div className="project-card-modern">
               <h3>Gestor de tareas</h3>
               <p>Organiza tus tareas y proyectos de manera eficiente.</p>
-              <a href="#" target="_blank" rel="noreferrer">Ver proyecto</a>
+              <a href="https://github.com/lucasmieres2001/Ukeek---Junia" target="_blank" rel="noreferrer">Ver proyecto</a>
             </div>
             {/* Agrega más proyectos aquí */}
           </motion.div>
