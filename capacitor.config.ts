@@ -5,5 +5,5 @@ const config: CapacitorConfig = {
   appName: 'my-cv',
   webDir: 'dist'
 };
-
+//hi
 export default config;
